@@ -48,7 +48,6 @@ namespace TechJobsConsole
             {
                 foreach (string column in row.Keys)
                 {
-                    // if values.contains set a boolean and then add it to the results? or .. add and then continue?
                     string aValue = row[column].ToLower();
 
                     if (aValue.Contains(value.ToLower())) 

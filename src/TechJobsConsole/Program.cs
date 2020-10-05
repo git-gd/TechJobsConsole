@@ -101,11 +101,20 @@ namespace TechJobsConsole
                 }
 
                 string input = Console.ReadLine();
-                choiceIdx = int.Parse(input);
+
+                try
+                {
+                    choiceIdx = int.Parse(input);
+                } catch
+                {
+                    choiceIdx = -1;
+                }
 
                 if (choiceIdx < 0 || choiceIdx >= choiceKeys.Length)
                 {
-                    Console.WriteLine("Invalid choices. Try again.");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid choices. Try again or press CTRL-C to exit.");
+                    Console.ResetColor();
                 }
                 else
                 {
@@ -126,13 +135,20 @@ namespace TechJobsConsole
                 {
                     foreach (string column in row.Keys)
                     {
-                        Console.WriteLine($"{column}: { row[column]}");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.Write($"{column}: ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"{ row[column]}");
                     }
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("*****");
+                    Console.ResetColor();
                 }
             } else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No results found.");
+                Console.ResetColor();
             }
         }
     }
