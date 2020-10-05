@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -35,6 +36,9 @@ namespace TechJobsConsole
                     values.Add(aValue);
                 }
             }
+
+            values.Sort(); // Bonus! Alphabetize
+
             return values;
         }
 

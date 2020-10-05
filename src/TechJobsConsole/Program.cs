@@ -133,6 +133,8 @@ namespace TechJobsConsole
 
                 foreach (Dictionary<string, string> row in someJobs)
                 {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("*****");
                     foreach (string column in row.Keys)
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -141,7 +143,7 @@ namespace TechJobsConsole
                         Console.WriteLine($"{ row[column]}");
                     }
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("*****");
+                    Console.WriteLine("*****\n");
                     Console.ResetColor();
                 }
             } else
