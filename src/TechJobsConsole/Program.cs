@@ -42,11 +42,14 @@ namespace TechJobsConsole
                     {
                         List<string> results = JobData.FindAll(columnChoice);
 
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("\n*** All " + columnChoices[columnChoice] + " Values ***");
+                        Console.ForegroundColor = ConsoleColor.White;
                         foreach (string item in results)
                         {
                             Console.WriteLine(item);
                         }
+                        Console.ResetColor();
                     }
                 }
                 else // choice is "search"
@@ -93,7 +96,9 @@ namespace TechJobsConsole
 
             do
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n" + choiceHeader + " by:");
+                Console.ResetColor();
 
                 for (int j = 0; j < choiceKeys.Length; j++)
                 {
